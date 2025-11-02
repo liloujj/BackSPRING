@@ -6,16 +6,14 @@ import jakarta.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
-    @SequenceGenerator(name = "seq", sequenceName = "MY_SEQ", allocationSize = 1)
-
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
 
     private String name;
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "university_id", nullable = false)
+    @JoinColumn(name = "university_id")
     private University university;
 
     public Student() {
@@ -27,7 +25,7 @@ public class Student {
         this.university = university;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -43,7 +41,7 @@ public class Student {
         return university;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -58,4 +56,6 @@ public class Student {
     public void setUniversity(University university) {
         this.university = university;
     }
+
+    
 }

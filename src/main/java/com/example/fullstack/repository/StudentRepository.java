@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface StudentRepository extends JpaRepository<Student, Integer> {
+public interface StudentRepository extends JpaRepository<Student, Long> {
 
     // Tous les étudiants avec le nom de leur université
     @Query("SELECT s.name, u.name FROM Student s, University u WHERE s.university.id = u.id")

@@ -31,6 +31,9 @@ public class UniversityController {
     // 🔹 Supprimer une université
     @DeleteMapping("/delete/{id}")
     public String deleteUniversity(@PathVariable Long id) {
+        University existing = universityRepository.findById(id).orElse(null);
+        if (existing == null)
+            return "University not found!";
         universityRepository.deleteById(id);
         return "University deleted successfully!";
     }
