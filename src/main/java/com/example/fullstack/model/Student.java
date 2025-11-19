@@ -13,7 +13,7 @@ public class Student {
     private String address;
 
     @ManyToOne
-    @JoinColumn(name = "university_id")
+    @JoinColumn(name = "university_id", nullable = false)
     private University university;
 
     public Student() {

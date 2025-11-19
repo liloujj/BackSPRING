@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/university")
+@RequestMapping("/api/university")
 @CrossOrigin(origins = "http://localhost:3000") // autorise ton frontend React
 public class UniversityController {
 
@@ -23,7 +23,7 @@ public class UniversityController {
     }
 
     // 🔹 Afficher toutes les universités
-    @GetMapping("/getAll")
+    @GetMapping("/all")
     public List<University> getAllUniversities() {
         return universityRepository.findAll();
     }

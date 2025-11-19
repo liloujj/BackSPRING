@@ -1,6 +1,6 @@
 package com.example.fullstack.service;
 
-import com.example.fullstack.model.Student;
+import com.example.fullstack.model.Student;     
 import com.example.fullstack.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +20,19 @@ public class StudentService {
     // 📋 Récupérer tous les étudiants
     public List<Student> getAllStudents() {
         return studentRepository.findAll();
+    }
+
+    // 🖊️ Mettre à jour un étudiant
+    public Student updateStudent(String id, Student student) {
+        Long studentId = Long.parseLong(id);
+        student.setId(studentId);
+        return studentRepository.save(student);
+    }
+
+    // 🗑️ Supprimer un étudiant
+    public void deleteStudent(String id) {
+        Long studentId = Long.parseLong(id);
+        studentRepository.deleteById(studentId);
     }
 
     // 📚 Récupérer tous les étudiants avec leur université

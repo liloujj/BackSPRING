@@ -5,13 +5,15 @@ import java.util.List;
 import jakarta.persistence.*;
 
 @Entity
-public class University {
+public class University{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "university_id")
-    
     private Long id;
+    
+    @Column(name = "university_id")
+    @OneToMany(mappedBy = "university", cascade = CascadeType.ALL)
+    private List<Student> students;
 
     public University(Long id, String name, List<Student> students) {
         this.id = id;
@@ -36,10 +38,6 @@ public class University {
     public void setName(String name) {
         this.name = name;
     }
-
-    @OneToMany(mappedBy = "university", cascade = CascadeType.ALL)
-    private List<Student> students;
-    // 🔹 Constructeurs
 
     public University() {
     }
