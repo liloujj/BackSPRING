@@ -1,7 +1,7 @@
 package com.example.fullstack.controller;
 
 import com.example.fullstack.model.Student;
-import com.example.fullstack.model.University;
+
 import com.example.fullstack.repository.StudentRepository;
 import com.example.fullstack.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-@CrossOrigin(origins = "http://localhost:3000") // autorise React à se connecter
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/student")
 public class StudentController {
