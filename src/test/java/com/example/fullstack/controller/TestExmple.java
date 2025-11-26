@@ -3,14 +3,14 @@ import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import com.example.fullstack.DemoApplication;
+import com.example.fullstack.FullstackApplication;
 import com.example.fullstack.model.Student;
 import com.example.fullstack.repository.StudentRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import java.util.List;
 
-@SpringBootTest(classes = DemoApplication.class) // Reference your main app class
+@SpringBootTest(classes = FullstackApplication.class) 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ControllerTest {
 
